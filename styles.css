@@ -464,3 +464,83 @@ section {
   
   }
 }
+
+footer {
+  background-color: var(--surface-color);
+  padding: 3rem 2rem;
+  margin-top: 4rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+
+address {
+  font-style: normal;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--text-color);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  color: var(--text-color);
+}
+
+/* Space for the future SVG icons */
+.social-links a svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.social-links a:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+/* Add a subtle animation for the icons */
+.social-links a:hover svg {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Last updated text styling */
+footer p {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+ins {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 2rem 1rem;
+  }
+  
+  .social-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .social-links a {
+    justify-content: center;
+  }
+}
