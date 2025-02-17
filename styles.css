@@ -8,7 +8,8 @@
   --background-color: #ffffff;
   --text-color: #333333;
   --surface-color: #f5f5f5;
-  --hover-color: rgba(76, 175, 80, 0.1);
+  --hover-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
+
   --border-color: #e0e0e0;
 }
 
@@ -62,7 +63,7 @@ section {
 #contact {
   scroll-margin-top: 100px;
 }
-#my-name-is {
+.my-name-is {
   font-family: "PT Serif", "Georgia", "Times New Roman", serif;
   font-weight: 700;
   font-style: normal;
@@ -74,9 +75,18 @@ section {
   font-family: "PT Serif", "Georgia", "Times New Roman", serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
+#bio {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.bio-image {
+  align-self: center;
+}
 #introduction {
   display: flex;
   flex-direction: column;
@@ -86,7 +96,31 @@ section {
 #first-section {
   display: flex;
   justify-content: space-evenly;
+  justify-items: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  #bio {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1rem;
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: calc(100vh - 100px); /* Adjust based on your header height */
+  }
+
+  .bio-image {
+    order: 3;
+  }
+  picture {
+    margin-bottom: 1rem;
+    align-self: center;
+  }
+
+  img {
+    width: 180px; /* Slightly smaller image for mobile */
+    height: auto;
+  }
 }
 
 /* Mobile styles */
@@ -95,9 +129,20 @@ section {
     padding: 2rem 0;
   }
 
+  #bio {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1rem;
+    overflow-y: hidden; /* Enables vertical scrolling */
+    max-height: calc(100vh - 100px); /* Adjust based on your header height */
+  }
+
+  .bio-image {
+    order: 3;
+  }
+
   #first-section {
     scroll-margin-top: 200px;
-
   }
 
   #projects {
@@ -136,12 +181,14 @@ section {
   }
 
   #introduction {
+    flex: 1;
     order: 2; /* Move text below image on mobile */
   }
 
   picture {
     order: 1; /* Move image above text on mobile */
     margin-bottom: 1rem;
+    margin-top: 4rem;
   }
 
   img {
@@ -225,6 +272,9 @@ section {
   }
   .bio-text,
   .bio-hobbies {
+    flex: 2;
+    order: 5;
+
     max-width: 100%;
   }
   .hobby-grid {
@@ -537,13 +587,11 @@ address {
   transform: translateY(-2px);
 }
 
-/* Add a subtle animation for the icons */
 .social-links a:hover svg {
   transform: scale(1.1);
   transition: transform 0.2s ease;
 }
 
-/* Last updated text styling */
 footer p {
   margin-top: 2rem;
   font-size: 0.9rem;
@@ -557,7 +605,6 @@ ins {
   color: var(--primary-color);
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
   footer {
     padding: 2rem 1rem;
@@ -570,5 +617,25 @@ ins {
 
   .social-links a {
     justify-content: center;
+  }
+}
+
+.projects-grid:has(.project-card:hover) .project-card:not(:hover) {
+  opacity: 0.7;
+  transform: scale(0.98);
+  transition: all 0.3s ease;
+}
+
+.bio-hobbies {
+  & h4 {
+    color: var(--text-color);
+  }
+
+  & .hobby-grid {
+    & div {
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
   }
 }
