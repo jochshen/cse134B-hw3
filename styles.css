@@ -5,7 +5,7 @@
   --primary-dark: #388e3c;
 
   /* Theme colors - these will change with dark/light mode */
-  --background-color: var(--background-color, #ffffff);
+  --background-color: #ffffff;
 
   --text-color: #333333;
   --surface-color: #f5f5f5;
@@ -21,7 +21,7 @@ header {
   justify-content: space-between;
   position: sticky;
   top: 0;
-  background-color: var(--background-color);
+  background-color: var(--background-color, #ffffff);
   z-index: 100;
   border-bottom: 1px solid black;
 }
@@ -46,8 +46,7 @@ a {
 }
 
 a:hover {
-  background-color: var(--hover-color);
-}
+  background-color: var(--hover-color, rgba(76, 175, 80, 0.1));}
 
 section {
   padding: 2rem 0;
@@ -288,98 +287,6 @@ section {
   }
 }
 
-/* 
-.projects-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-.projects-section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 2rem;
-}
-
-.project-card {
-  background: var(--surface-color, #ffffff);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.project-image {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.project-content {
-  padding: 1.5rem;
-}
-
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-}
-
-.project-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.project-time {
-  font-size: 0.875rem;
-  color: #666;
-}
-
-.project-description {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .project-card {
-    max-width: 100%;
-  }
-  
-  .project-image {
-    height: 200px;
-  }
-  
-  .project-content {
-    padding: 1rem;
-  }
-  
-  .project-title {
-    font-size: 1.1rem;
-  }
-  
-  .project-description {
-    font-size: 0.9rem;
-    -webkit-line-clamp: 5;
-  }
-} */
 .projects {
   max-width: 1400px; /* Increased to accommodate 3 cards per row */
   margin: 0 auto;
@@ -408,6 +315,10 @@ section {
   height: 100%; /* Ensure all cards are same height */
   display: flex;
   flex-direction: column;
+}
+
+.project-card:hover {
+  background-color: var(--hover-color, rgba(76, 175, 80, 0.1));  transform: translateY(-2px);
 }
 
 .image-container {
@@ -583,8 +494,7 @@ address {
 }
 
 .social-links a:hover {
-  background-color: var(--hover-color);
-  transform: translateY(-2px);
+  background-color: var(--hover-color, rgba(76, 175, 80, 0.1));  transform: translateY(-2px);
 }
 
 .social-links a:hover svg {
