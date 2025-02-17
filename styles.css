@@ -225,14 +225,14 @@ section {
 /* Hobbies take up two-thirds of the row */
 .bio-hobbies {
   flex: 2;
-  max-width: 65%;
+  max-width: 100%;
 }
 
 /* Display hobbies in a horizontal row */
 .hobby-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 60px 60px;
 }
 
 /* Styling for individual hobby sections */
@@ -260,7 +260,7 @@ section {
 
 .hobby-grid li {
   padding: 3px 0;
-  font-size: 0.95em;
+  font-size: 1.2em;
 }
 
 /* Responsive layout: Stack elements on smaller screens */
