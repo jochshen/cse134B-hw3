@@ -5,11 +5,12 @@
   --primary-dark: #388e3c;
 
   /* Theme colors - these will change with dark/light mode */
-  --background-color: #ffffff;
+  --background-color: var(--background-color, #ffffff);
+
   --text-color: #333333;
   --surface-color: #f5f5f5;
   --hover-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
-
+  --border-top: 1px solid var(--border-color, #e0e0e0);
   --border-color: #e0e0e0;
 }
 
